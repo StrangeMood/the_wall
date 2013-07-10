@@ -36,7 +36,7 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Wed Jul 10 17:42:46 MSK 2013
+                    DATE: Wed Jul 10 18:36:08 MSK 2013
                     SOURCE: /Users/loki/Work/the_wall/app/views/index.scala.html
                     HASH: b74ff1cac8d24fab568da2a10421bef2c58ba840
                     MATRIX: 505->1|599->18|636->21|667->44|706->46|748->54|776->61|813->68
