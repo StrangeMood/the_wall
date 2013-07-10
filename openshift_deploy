@@ -25,5 +25,5 @@ git add . -A
 echo "[info] running: git commit -m \"$MESSAGE\""
 git commit -m "$MESSAGE"
 
-echo "[info] running: git push openshift"
-git push openshift
+echo "[info] running: git push openshift master"
+git push openshift master
