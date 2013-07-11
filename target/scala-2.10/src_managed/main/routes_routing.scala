@@ -1,6 +1,6 @@
 // @SOURCE:/Users/loki/Work/the_wall/conf/routes
 // @HASH:f61314acd7b352d5d25a614eb25df5f0c78f64a0
-// @DATE:Thu Jul 11 23:42:43 MSK 2013
+// @DATE:Thu Jul 11 23:52:58 MSK 2013
 
 
 import play.core._
