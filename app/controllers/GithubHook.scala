@@ -6,8 +6,11 @@ import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
 import models.Commit
+import play.api.libs.iteratee.Concurrent
 
 object GithubHook extends Controller {
+
+  val (githubCommits, githubChannel) = Concurrent.broadcast[Commit]
 
   implicit val commitsRead = new Reads[List[Commit]] {
     private val commitBuilder =
@@ -26,6 +29,20 @@ object GithubHook extends Controller {
         implicit val commitReads = commitBuilder(Commit.apply(_, _, _, _, _, project))
 
         (js \ "commits").validate[List[Commit]]
+      }
+    }
+  }
+
+  def hook = Action(parse.json) { request =>
+    request.body.validate[List[Commit]].map {
+      case commits => {
+        commits.foreach(githubChannel.push(_))
+        Ok("Thanks")
+      }
+    }.recoverTotal {
+      e => {
+        Logger.error(JsError.toFlatJson(e).toString)
+        BadRequest("Invalid json")
       }
     }
   }

@@ -29,9 +29,10 @@ Seq[Any](format.raw/*1.32*/("""
         <link rel="stylesheet" media="screen" href=""""),_display_(Seq[Any](/*8.54*/routes/*8.60*/.Assets.at("stylesheets/main.css"))),format.raw/*8.94*/("""">
         <link rel="shortcut icon" type="image/png" href=""""),_display_(Seq[Any](/*9.59*/routes/*9.65*/.Assets.at("images/favicon.png"))),format.raw/*9.97*/("""">
         <script src=""""),_display_(Seq[Any](/*10.23*/routes/*10.29*/.Assets.at("javascripts/jquery-1.9.0.min.js"))),format.raw/*10.74*/("""" type="text/javascript"></script>
+        <script src=""""),_display_(Seq[Any](/*11.23*/routes/*11.29*/.Assets.at("javascripts/application.js"))),format.raw/*11.69*/("""" type="text/javascript"></script>
     </head>
     <body>
-        """),_display_(Seq[Any](/*13.10*/content)),format.raw/*13.17*/("""
+        """),_display_(Seq[Any](/*14.10*/content)),format.raw/*14.17*/("""
     </body>
 </html>
 """))}
@@ -46,11 +47,11 @@ Seq[Any](format.raw/*1.32*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jul 11 00:01:39 MSK 2013
+                    DATE: Thu Jul 11 23:18:39 MSK 2013
                     SOURCE: /Users/loki/Work/the_wall/app/views/main.scala.html
-                    HASH: 27f8edb770da492742673119002f624cb384b42b
-                    MATRIX: 509->1|616->31|704->84|730->89|827->151|841->157|896->191|992->252|1006->258|1059->290|1120->315|1135->321|1202->366|1305->433|1334->440
-                    LINES: 19->1|22->1|28->7|28->7|29->8|29->8|29->8|30->9|30->9|30->9|31->10|31->10|31->10|34->13|34->13
+                    HASH: 14942bac3f9684d20c1f8beec5e822c5bfddc5c7
+                    MATRIX: 509->1|616->31|704->84|730->89|827->151|841->157|896->191|992->252|1006->258|1059->290|1120->315|1135->321|1202->366|1295->423|1310->429|1372->469|1475->536|1504->543
+                    LINES: 19->1|22->1|28->7|28->7|29->8|29->8|29->8|30->9|30->9|30->9|31->10|31->10|31->10|32->11|32->11|32->11|35->14|35->14
                     -- GENERATED --
                 */
             

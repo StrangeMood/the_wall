@@ -21,7 +21,7 @@ object index extends BaseScalaTemplate[play.api.templates.Html,Format[play.api.t
 
 Seq[Any](format.raw/*1.19*/("""
 
-"""),_display_(Seq[Any](/*3.2*/main("PELASE STAND BY")/*3.25*/ {_display_(Seq[Any](format.raw/*3.27*/("""
+"""),_display_(Seq[Any](/*3.2*/main("SIMPLE STREAM")/*3.23*/ {_display_(Seq[Any](format.raw/*3.25*/("""
   <h1>"""),_display_(Seq[Any](/*4.8*/message)),format.raw/*4.15*/("""</h1>
 """)))})),format.raw/*5.2*/("""
 """))}
@@ -36,10 +36,10 @@ Seq[Any](format.raw/*1.19*/("""
 }
                 /*
                     -- GENERATED --
-                    DATE: Thu Jul 11 00:01:39 MSK 2013
+                    DATE: Thu Jul 11 23:18:38 MSK 2013
                     SOURCE: /Users/loki/Work/the_wall/app/views/index.scala.html
-                    HASH: b74ff1cac8d24fab568da2a10421bef2c58ba840
-                    MATRIX: 505->1|599->18|636->21|667->44|706->46|748->54|776->61|813->68
+                    HASH: b2f5047a90bf367421940ec42402cd25a8886db5
+                    MATRIX: 505->1|599->18|636->21|665->42|704->44|746->52|774->59|811->66
                     LINES: 19->1|22->1|24->3|24->3|24->3|25->4|25->4|26->5
                     -- GENERATED --
                 */

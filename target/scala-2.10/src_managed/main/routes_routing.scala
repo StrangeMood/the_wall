@@ -1,6 +1,6 @@
 // @SOURCE:/Users/loki/Work/the_wall/conf/routes
-// @HASH:f904f23acbfbb0ded1d9ae85b262187e14e562de
-// @DATE:Thu Jul 11 00:01:37 MSK 2013
+// @HASH:f61314acd7b352d5d25a614eb25df5f0c78f64a0
+// @DATE:Thu Jul 11 23:19:56 MSK 2013
 
 
 import play.core._
@@ -32,10 +32,18 @@ lazy val defaultPrefix = { if(Routes.prefix.endsWith("/")) "" else "/" }
 private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern(List(StaticPart(Routes.prefix))))
         
 
-// @LINE:9
-private[this] lazy val controllers_Assets_at1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:7
+private[this] lazy val controllers_Application_events1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("events"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:10
+private[this] lazy val controllers_GithubHook_hook2 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("github/hook"))))
+        
+
+// @LINE:13
+private[this] lazy val controllers_Assets_at3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """events""","""controllers.Application.events"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """github/hook""","""controllers.GithubHook.hook"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -51,8 +59,24 @@ case controllers_Application_index0(params) => {
 }
         
 
-// @LINE:9
-case controllers_Assets_at1(params) => {
+// @LINE:7
+case controllers_Application_events1(params) => {
+   call { 
+        invokeHandler(controllers.Application.events, HandlerDef(this, "controllers.Application", "events", Nil,"GET", """""", Routes.prefix + """events"""))
+   }
+}
+        
+
+// @LINE:10
+case controllers_GithubHook_hook2(params) => {
+   call { 
+        invokeHandler(controllers.GithubHook.hook, HandlerDef(this, "controllers.GithubHook", "hook", Nil,"POST", """ Github hook""", Routes.prefix + """github/hook"""))
+   }
+}
+        
+
+// @LINE:13
+case controllers_Assets_at3(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }
