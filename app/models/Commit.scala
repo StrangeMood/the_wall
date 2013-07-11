@@ -10,20 +10,21 @@ case class Commit(
   message: String,
   author: (String, String),
   timestamp: String,
-  url: String
-//  project: String
+  url: String,
+  project: String
 )
 
 object Commit {
-  implicit val githubReads: Reads[Commit] = (
-    (__ \ "id").read[String] ~
-    (__ \ "message").read[String] ~
-    (__ \ "author").read(
-      (__ \ "email").read[String] ~
-      (__ \ "name").read[String]
+  implicit val commitWrites = (
+    (__ \ "id").write[String] ~
+    (__ \ "message").write[String] ~
+    (__ \ "author").write(
+      (__ \ "email").write[String] ~
+      (__ \ "name").write[String]
       tupled
     ) ~
-    (__ \ "timestamp").read[String] ~
-    (__ \ "url").read[String]
-  )(Commit.apply _)
+    (__ \ "timestamp").write[String] ~
+    (__ \ "url").write[String] ~
+    (__ \ "project").write[String]
+  )(unlift(Commit.unapply))
 }
