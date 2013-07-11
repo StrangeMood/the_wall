@@ -19,23 +19,23 @@
         <dependency>
             <groupId>play</groupId>
             <artifactId>play_2.10</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
         </dependency>
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-test_2.10</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>play</groupId>
             <artifactId>play-jdbc_2.10</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
         </dependency>
         <dependency>
             <groupId>play</groupId>
             <artifactId>anorm_2.10</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
         </dependency>
     </dependencies>
     <repositories>

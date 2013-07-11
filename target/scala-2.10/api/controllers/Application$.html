@@ -406,7 +406,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="play.api.mvc.Results#Async" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Async(promise:&lt;?&gt;):play.api.mvc.AsyncResult"></a>
+      <a id="Async(promise:scala.concurrent.Future[play.api.mvc.Result]):play.api.mvc.AsyncResult"></a>
       <a id="Async(Future[Result]):AsyncResult"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -679,7 +679,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Status</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#CSS" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="CSS(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="CSS(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="CSS(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -744,7 +744,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>HeaderNames</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#EVENT_STREAM" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="EVENT_STREAM(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="EVENT_STREAM(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="EVENT_STREAM(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -848,7 +848,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Status</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#FORM" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="FORM(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="FORM(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="FORM(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -913,7 +913,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="play.api.mvc.Results#Found" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Found(url:&lt;?&gt;):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
+      <a id="Found(url:String):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
       <a id="Found(String):SimpleResult[EmptyContent]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -991,7 +991,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>HeaderNames</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#HTML" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="HTML(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="HTML(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="HTML(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1147,7 +1147,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#JAVASCRIPT" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="JAVASCRIPT(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="JAVASCRIPT(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="JAVASCRIPT(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1160,7 +1160,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ContentTypes</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#JSON" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="JSON(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="JSON(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="JSON(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1316,7 +1316,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="play.api.mvc.Results#MovedPermanently" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="MovedPermanently(url:&lt;?&gt;):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
+      <a id="MovedPermanently(url:String):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
       <a id="MovedPermanently(String):SimpleResult[EmptyContent]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1758,7 +1758,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>HeaderNames</dd></dl></div>
     </li><li name="play.api.mvc.Results#Redirect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Redirect(call:&lt;?&gt;):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
+      <a id="Redirect(call:play.api.mvc.Call):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
       <a id="Redirect(Call):SimpleResult[EmptyContent]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1771,7 +1771,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="play.api.mvc.Results#Redirect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Redirect(url:&lt;?&gt;,queryString:&lt;?&gt;,status:&lt;?&gt;):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
+      <a id="Redirect(url:String,queryString:Map[String,Seq[String]],status:Int):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
       <a id="Redirect(String,Map[String,Seq[String]],Int):SimpleResult[EmptyContent]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1784,7 +1784,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="play.api.mvc.Results#Redirect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Redirect(url:&lt;?&gt;,status:&lt;?&gt;):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
+      <a id="Redirect(url:String,status:Int):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
       <a id="Redirect(String,Int):SimpleResult[EmptyContent]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1901,7 +1901,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Status</dd></dl></div>
     </li><li name="play.api.mvc.Results#SeeOther" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="SeeOther(url:&lt;?&gt;):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
+      <a id="SeeOther(url:String):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
       <a id="SeeOther(String):SimpleResult[EmptyContent]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1927,7 +1927,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Results</dd></dl></div>
     </li><li name="play.api.mvc.Results#Status" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Status(code:&lt;?&gt;):Results.this.Status"></a>
+      <a id="Status(code:Int):Results.this.Status"></a>
       <a id="Status(Int):Status"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -1966,7 +1966,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Status</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#TEXT" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="TEXT(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="TEXT(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="TEXT(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -2031,7 +2031,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>HeaderNames</dd></dl></div>
     </li><li name="play.api.mvc.Results#TemporaryRedirect" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="TemporaryRedirect(url:&lt;?&gt;):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
+      <a id="TemporaryRedirect(url:String):play.api.mvc.SimpleResult[play.api.mvc.Results.EmptyContent]"></a>
       <a id="TemporaryRedirect(String):SimpleResult[EmptyContent]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -2239,7 +2239,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>HeaderNames</dd></dl></div>
     </li><li name="play.api.http.ContentTypes#XML" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="XML(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="XML(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="XML(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -2358,6 +2358,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="controllers.Application#events" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="events:play.api.mvc.Action[play.api.mvc.AnyContent]"></a>
+      <a id="events:Action[AnyContent]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">events</span><span class="result">: <span class="extype" name="play.api.mvc.Action">Action</span>[<span class="extype" name="play.api.mvc.AnyContent">AnyContent</span>]</span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -2491,8 +2504,21 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="play.api.mvc.BodyParsers.parse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parse"></a>
+      <a id="parse:parse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parse</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>BodyParsers</dd></dl></div>
     </li><li name="play.api.mvc.Rendering#render" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="render(f:&lt;?&gt;)(implicitrequest:&lt;?&gt;):play.api.mvc.Result"></a>
+      <a id="render(f:PartialFunction[play.api.http.MediaRange,play.api.mvc.Result])(implicitrequest:play.api.mvc.RequestHeader):play.api.mvc.Result"></a>
       <a id="render(PartialFunction[MediaRange,Result])(RequestHeader):Result"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -2592,7 +2618,7 @@
               
         </dd></dl></div>
     </li><li name="play.api.http.ContentTypes#withCharset" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="withCharset(mimeType:&lt;?&gt;)(implicitcodec:&lt;?&gt;):String"></a>
+      <a id="withCharset(mimeType:String)(implicitcodec:play.api.mvc.Codec):String"></a>
       <a id="withCharset(String)(Codec):String"></a>
       <h4 class="signature">
       <span class="modifier_kind">
