@@ -25,10 +25,10 @@ object GithubHook extends Controller {
       (__ \ "url").read[String]
 
     def reads(js: JsValue): JsResult[List[Commit]] = {
-      (js \ "repository" \ "name").validate[String].flatMap { project =>
+      (js \ "payload" \ "repository" \ "name").validate[String].flatMap { project =>
         implicit val commitReads = commitBuilder(Commit.apply(_, _, _, _, _, project))
 
-        (js \ "commits").validate[List[Commit]]
+        (js \ "payload" \ "commits").validate[List[Commit]]
       }
     }
   }
