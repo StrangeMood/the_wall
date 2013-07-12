@@ -5,6 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index
 GET     /events                     controllers.Application.events
+GET     /websocket                  controllers.Application.websocket
 
 # Github hook
 POST    /github/hook                controllers.GithubHook.hook

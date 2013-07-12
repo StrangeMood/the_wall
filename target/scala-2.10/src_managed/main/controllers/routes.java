@@ -1,6 +1,6 @@
 // @SOURCE:/Users/loki/Work/the_wall/conf/routes
-// @HASH:f61314acd7b352d5d25a614eb25df5f0c78f64a0
-// @DATE:Fri Jul 12 09:03:50 MSK 2013
+// @HASH:63d8a85c9bc8071192b5d7a965be4f7903449aef
+// @DATE:Fri Jul 12 09:53:40 MSK 2013
 
 package controllers;
 

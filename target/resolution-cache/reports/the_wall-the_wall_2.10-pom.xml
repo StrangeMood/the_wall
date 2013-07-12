@@ -5,9 +5,9 @@
 		organisation="the_wall"
 		module="the_wall_2.10"
 		revision="1.0-SNAPSHOT"
-		conf="provided"
+		conf="pom"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
-		date="20130712090350"/>
+		date="20130712095341"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

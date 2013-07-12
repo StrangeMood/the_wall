@@ -5,9 +5,9 @@
 		organisation="the_wall"
 		module="the_wall_2.10"
 		revision="1.0-SNAPSHOT"
-		conf="test"
+		conf="test-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
-		date="20130712090350"/>
+		date="20130712095341"/>
 	<dependencies>
 		<module organisation="commons-codec" name="commons-codec">
 			<revision name="1.6" status="release" pubdate="20130506214714" resolver="local" artresolver="local" homepage="http://commons.apache.org/codec/" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="70">
@@ -58,7 +58,7 @@
 		<module organisation="play" name="play-test_2.10">
 			<revision name="2.1.2" status="release" pubdate="20130705115848" resolver="local" artresolver="local" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="52">
 				<metadata-artifact status="no" details="" size="2241" time="0" location="/usr/local/bin/../Cellar/play/2.1.2/bin/../libexec/framework/../repository/cache/play/play-test_2.10/ivy-2.1.2.xml" searched="false" origin-is-local="true" origin-location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play-test_2.10/2.1.2/ivys/ivy.xml"/>
-				<caller organisation="the_wall" name="the_wall_2.10" conf="test, compile, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="the_wall" name="the_wall_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-test_2.10" type="jar" ext="jar" status="no" details="" size="132141" time="0" location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play-test_2.10/2.1.2/jars/play-test_2.10.jar">
 						<origin-location is-local="true" location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play-test_2.10/2.1.2/jars/play-test_2.10.jar"/>
@@ -79,9 +79,9 @@
 					</artifact>
 				</artifacts>
 			</revision>
-			<revision name="4.8.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default(compile), compile, master(*), runtime, compile(*), runtime(*), master, default" position="-1">
+			<revision name="4.8.2" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="default(compile), compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
 				<evicted-by rev="4.10"/>
-				<caller organisation="play" name="play-test_2.10" conf="compile" rev="4.10" rev-constraint-default="4.10" rev-constraint-dynamic="4.10" callerrev="2.1.2"/>
+				<caller organisation="play" name="play-test_2.10" conf="compile" rev="4.8.2" rev-constraint-default="4.8.2" rev-constraint-dynamic="4.10" callerrev="2.1.2"/>
 				<caller organisation="org.fluentlenium" name="fluentlenium-core" conf="compile, runtime" rev="4.8.2" rev-constraint-default="4.8.2" rev-constraint-dynamic="4.8.2" callerrev="0.7.3"/>
 				<caller organisation="com.novocode" name="junit-interface" conf="default, compile, runtime, master" rev="4.8.2" rev-constraint-default="4.8.2" rev-constraint-dynamic="4.8.2" callerrev="0.9"/>
 				<artifacts>
@@ -91,7 +91,7 @@
 		<module organisation="play" name="anorm_2.10">
 			<revision name="2.1.2" status="release" pubdate="20130705115707" resolver="local" artresolver="local" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="51">
 				<metadata-artifact status="no" details="" size="1715" time="0" location="/usr/local/bin/../Cellar/play/2.1.2/bin/../libexec/framework/../repository/cache/play/anorm_2.10/ivy-2.1.2.xml" searched="false" origin-is-local="true" origin-location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/anorm_2.10/2.1.2/ivys/ivy.xml"/>
-				<caller organisation="the_wall" name="the_wall_2.10" conf="test, compile, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="the_wall" name="the_wall_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="anorm_2.10" type="jar" ext="jar" status="no" details="" size="296149" time="0" location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/anorm_2.10/2.1.2/jars/anorm_2.10.jar">
 						<origin-location is-local="true" location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/anorm_2.10/2.1.2/jars/anorm_2.10.jar"/>
@@ -102,7 +102,7 @@
 		<module organisation="play" name="play-jdbc_2.10">
 			<revision name="2.1.2" status="release" pubdate="20130705115852" resolver="local" artresolver="local" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="35">
 				<metadata-artifact status="no" details="" size="2337" time="0" location="/usr/local/bin/../Cellar/play/2.1.2/bin/../libexec/framework/../repository/cache/play/play-jdbc_2.10/ivy-2.1.2.xml" searched="false" origin-is-local="true" origin-location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play-jdbc_2.10/2.1.2/ivys/ivy.xml"/>
-				<caller organisation="the_wall" name="the_wall_2.10" conf="test, compile, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="the_wall" name="the_wall_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
 				<artifacts>
 					<artifact name="play-jdbc_2.10" type="jar" ext="jar" status="no" details="" size="209818" time="0" location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play-jdbc_2.10/2.1.2/jars/play-jdbc_2.10.jar">
 						<origin-location is-local="true" location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play-jdbc_2.10/2.1.2/jars/play-jdbc_2.10.jar"/>
@@ -191,11 +191,10 @@
 					</artifact>
 				</artifacts>
 			</revision>
-			<revision name="12.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master, default(compile), default" position="-1">
+			<revision name="12.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="-1">
 				<evicted-by rev="13.0.1"/>
 				<caller organisation="org.seleniumhq.selenium" name="selenium-api" conf="compile, runtime" rev="12.0" rev-constraint-default="12.0" rev-constraint-dynamic="12.0" callerrev="2.25.0"/>
 				<caller organisation="org.seleniumhq.selenium" name="selenium-remote-driver" conf="compile, runtime" rev="12.0" rev-constraint-default="12.0" rev-constraint-dynamic="12.0" callerrev="2.25.0"/>
-				<caller organisation="play" name="play-java_2.10" conf="compile" rev="13.0.1" rev-constraint-default="13.0.1" rev-constraint-dynamic="13.0.1" callerrev="2.1.2"/>
 				<artifacts>
 				</artifacts>
 			</revision>
@@ -298,7 +297,7 @@
 			<revision name="2.1.2" status="release" pubdate="20130705115826" resolver="local" artresolver="local" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
 				<metadata-artifact status="no" details="" size="4917" time="0" location="/usr/local/bin/../Cellar/play/2.1.2/bin/../libexec/framework/../repository/cache/play/play_2.10/ivy-2.1.2.xml" searched="false" origin-is-local="true" origin-location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play_2.10/2.1.2/ivys/ivy.xml"/>
 				<caller organisation="play" name="play-test_2.10" conf="compile" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="2.1.2"/>
-				<caller organisation="the_wall" name="the_wall_2.10" conf="test, compile, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="the_wall" name="the_wall_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="play" name="play-java_2.10" conf="compile" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="2.1.2"/>
 				<artifacts>
 					<artifact name="play_2.10" type="jar" ext="jar" status="no" details="" size="4688159" time="0" location="/usr/local/Cellar/play/2.1.2/libexec/repository/local/play/play_2.10/2.1.2/jars/play_2.10.jar">
@@ -1236,7 +1235,7 @@
 				<caller organisation="org.specs2" name="scalaz-concurrent_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="7.0.0"/>
 				<caller organisation="org.specs2" name="scalaz-core_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="7.0.0"/>
 				<caller organisation="org.scala-lang" name="scala-reflect" conf="default, compile, runtime, master" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="2.10.0"/>
-				<caller organisation="the_wall" name="the_wall_2.10" conf="test, compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.0-SNAPSHOT"/>
+				<caller organisation="the_wall" name="the_wall_2.10" conf="test-internal, test, optional, compile, provided, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.0-SNAPSHOT"/>
 				<caller organisation="org.scala-stm" name="scala-stm_2.10.0" conf="default, compile, runtime, master" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="0.6"/>
 				<caller organisation="com.jsuereth" name="scala-arm_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="1.3"/>
 				<caller organisation="org.specs2" name="scalaz-effect_2.10" conf="compile, runtime" rev="2.10.0" rev-constraint-default="2.10.0" rev-constraint-dynamic="2.10.0" callerrev="7.0.0"/>

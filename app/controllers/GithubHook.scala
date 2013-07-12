@@ -36,13 +36,13 @@ object GithubHook extends Controller {
   def hook = Action(parse.json) { request =>
     request.body.validate[List[Commit]].map {
       case commits => {
-        commits.foreach(githubChannel.push(_))
+        commits.reverse.foreach(githubChannel.push(_))
         Ok("Thanks")
       }
     }.recoverTotal {
       e => {
         Logger.error(JsError.toFlatJson(e).toString)
-        BadRequest("Invalid json")
+        BadRequest("Invalid json " + JsError.toFlatJson(e))
       }
     }
   }
