@@ -9,6 +9,7 @@ set :scm, :none
 
 # Our deploy is to copy the contents of…
 set :deploy_via, :copy
+set :copy_compression, false
 
 # the target directory! In this case repository is really
 # a pointer to the directory
