@@ -4,7 +4,7 @@ import play.api._
 import play.api.mvc._
 import play.api.libs.json.Json
 import play.api.libs.EventSource
-import play.api.libs.iteratee.{Concurrent, Enumeratee}
+import play.api.libs.iteratee.{Enumerator, Concurrent, Enumeratee}
 import models.Commit
 
 object Application extends Controller {
@@ -14,7 +14,9 @@ object Application extends Controller {
   }
 
   private val toJson = Enumeratee.map[Commit](Json.toJson(_))
+  private val numbers = Enumerator(1, 2, 3, 4, 5) &> Enumeratee.map[Int](Json.toJson(_))
+
   def events = Action {
-    Ok.stream(GithubHook.githubCommits &> toJson &> Concurrent.buffer(50) &> EventSource()).as("text/event-stream")
+    Ok.stream(numbers >>> (GithubHook.githubCommits &> toJson) &> Concurrent.buffer(50) &> EventSource()).as("text/event-stream")
   }
 }
