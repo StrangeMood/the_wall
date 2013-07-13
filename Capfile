@@ -26,16 +26,22 @@ set :use_sudo, false
 # Skip bits in "target" that we don't want.
 set :copy_exclude, ['streams', 'scala*']
 
+after 'deploy', 'deploy:restart'
 after 'deploy:restart', 'deploy:cleanup'
 
 namespace :deploy do
+  task :restart do
+    stop
+    start
+  end
+
   # Override start run current/start. The options are options to play
   # specifying a config file and pidfile
   task :start do
-    run 'nohup /opt/thewall/current/start -Dconfig.file=/opt/thewall/current/production.conf -Dhttp.port=80 -Dpidfile.path=/opt/thewall/thewall.pid >/dev/null 2>&1 &'
+    run "#{current_path}/start -Dhttp.port=80 -Dpidfile.path=#{shared_path}/thewall.pid >/dev/null 2>&1 &"
   end
   # Handle killing a running instance
   task :stop do
-    run "kill -15 `cat /opt/thewall/thewall.pid`"
+    run "kill -15 `cat #{shared_path}/thewall.pid`"
   end
 end
