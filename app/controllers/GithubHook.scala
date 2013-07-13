@@ -7,6 +7,8 @@ import play.api.libs.functional.syntax._
 
 import models.Commit
 import play.api.libs.iteratee.Concurrent
+import play.api.data._
+import play.api.data.Forms._
 
 object GithubHook extends Controller {
 
@@ -25,16 +27,18 @@ object GithubHook extends Controller {
       (__ \ "url").read[String]
 
     def reads(js: JsValue): JsResult[List[Commit]] = {
-      (js \ "payload" \ "repository" \ "name").validate[String].flatMap { project =>
+      (js \ "repository" \ "name").validate[String].flatMap { project =>
         implicit val commitReads = commitBuilder(Commit.apply(_, _, _, _, _, project))
 
-        (js \ "payload" \ "commits").validate[List[Commit]]
+        (js \ "commits").validate[List[Commit]]
       }
     }
   }
 
-  def hook = Action(parse.json) { request =>
-    request.body.validate[List[Commit]].map {
+  def hook = Action { implicit request =>
+    val payload = Json.parse(Form("payload" -> text).bindFromRequest.get)
+
+    payload.validate[List[Commit]].map {
       case commits => {
         commits.reverse.foreach(githubChannel.push(_))
         Ok("Thanks")
