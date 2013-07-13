@@ -6,13 +6,24 @@ import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
 import models.Commit
-import play.api.libs.iteratee.Concurrent
+import play.api.libs.iteratee.{Enumeratee, Concurrent}
 import play.api.data._
 import play.api.data.Forms._
 
-object GithubHook extends Controller {
+object Github extends Controller {
 
-  val (githubCommits, githubChannel) = Concurrent.broadcast[Commit]
+  private val (commits, channel) = Concurrent.broadcast[Commit]
+
+  private val commitsStats = Enumeratee.scanLeft[Commit](Map[String, Int]()) { (stats, commit) =>
+    val statsForProject = stats.getOrElse(commit.project, 0)
+    stats.updated(commit.project, statsForProject + 1)
+  }
+
+  private val commitsToJson = Enumeratee.map[Commit](Json.toJson(_))
+  private val statsToJson = Enumeratee.map[Map[String, Int]](Json.toJson(_))
+
+  val events = commits &> commitsToJson
+  val stats = commits &> commitsStats &> statsToJson
 
   implicit val commitsRead = new Reads[List[Commit]] {
     private val commitBuilder =
@@ -40,7 +51,7 @@ object GithubHook extends Controller {
 
     payload.validate[List[Commit]].map {
       case commits => {
-        commits.reverse.foreach(githubChannel.push(_))
+        commits.reverse.foreach(channel.push(_))
         Ok("Thanks")
       }
     }.recoverTotal {
