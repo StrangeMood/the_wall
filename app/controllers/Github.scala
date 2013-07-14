@@ -19,11 +19,8 @@ object Github extends Controller {
     stats.updated(commit.project, statsForProject + 1)
   }
 
-  private val commitsToJson = Enumeratee.map[Commit](Json.toJson(_))
-  private val statsToJson = Enumeratee.map[Map[String, Int]](Json.toJson(_))
-
-  val events = commits &> commitsToJson
-  val stats = commits &> commitsStats &> statsToJson
+  val events = commits &> Json.toJson
+  val stats = commits &> commitsStats &> Json.toJson
 
   implicit val commitsRead = new Reads[List[Commit]] {
     private val commitBuilder =
