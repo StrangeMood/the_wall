@@ -36,7 +36,7 @@ object Github extends Controller {
   }
 
   private val (commits, channel) = Concurrent.broadcast[Commit]
-  val demoData = Enumerator(Json.parse(Source.fromFile("test/data/github_payload.json").mkString).as[List[Commit]]:_*) &> Json.toJson
+//  val demoData = Enumerator(Json.parse(Source.fromFile("test/data/github_payload.json").mkString).as[List[Commit]]:_*) &> Json.toJson
 
   private val commitsStats = Enumeratee.scanLeft[Commit](Map[String, Int]()) { (stats, commit) =>
     val statsForProject = stats.getOrElse(commit.project, 0)
