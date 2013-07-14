@@ -1,0 +1,12 @@
+
+echo "[INFO] play compile: play clean compile stage"
+play clean compile stage
+
+echo "[INFO] copy public assets: cp ./public -R ./target/"
+cp -R ./public ./target/
+
+echo "[INFO] copy config file: cp ./conf/application.conf ./target/"
+cp ./conf/application.conf ./target/
+
+echo "[INFO] capistrano deploy: bundle exec cap deploy"
+bundle exec cap deploy

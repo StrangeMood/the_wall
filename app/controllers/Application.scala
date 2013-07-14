@@ -1,5 +1,6 @@
 package controllers
 
+import io.Source
 import play.api._
 import play.api.mvc._
 import play.api.libs.json.{JsValue, Json}
@@ -10,10 +11,14 @@ import models.Commit
 object Application extends Controller {
 
   def index = Action {
-    Ok(views.html.index("Wait for messages in console..."))
+    Redirect(routes.Application.wall("cloudcastle"))
+  }
+
+  def wall(name: String) = Action {
+    Ok(views.html.wall(name))
   }
 
   def events = Action {
-    Ok.stream(Github.events >- Github.stats &> Concurrent.buffer(50) &> EventSource()).as("text/event-stream")
+    Ok.stream(Github.demoData >>> Github.events >- Github.stats &> Concurrent.buffer(50) &> EventSource()).as("text/event-stream")
   }
 }

@@ -9,7 +9,6 @@ set :scm, :none
 
 # Our deploy is to copy the contents of…
 set :deploy_via, :copy
-set :copy_compression, false
 
 # the target directory! In this case repository is really
 # a pointer to the directory
@@ -38,7 +37,7 @@ namespace :deploy do
   # Override start run current/start. The options are options to play
   # specifying a config file and pidfile
   task :start do
-    run "#{current_path}/start -Dhttp.port=80 -Dpidfile.path=#{shared_path}/thewall.pid >/dev/null 2>&1 &"
+    run "#{current_path}/start -Dhttp.port=80 -Dconfig.file=#{current_path}/application.conf -Dpidfile.path=#{shared_path}/thewall.pid >/dev/null 2>&1 &"
   end
   # Handle killing a running instance
   task :stop do

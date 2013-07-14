@@ -10,3 +10,4 @@ dist
 .idea_modules
 
 target
+public/components

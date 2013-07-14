@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                           controllers.Application.index
+GET     /wall/:name                 controllers.Application.wall(name)
 GET     /events                     controllers.Application.events
 
 # Github hook

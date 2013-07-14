@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "jquery": "latest",
+    "angular": "latest",
+    "sugar": "latest"
+  }
+}

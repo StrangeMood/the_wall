@@ -1,0 +1,11 @@
+@(name: String)
+
+@main(name) {
+  <div class="Title">
+    <h1>@name</h1>
+  </div>
+
+  <ul class="Wall" ng-controller="Wall">
+    @views.html.brick()
+  </ul>
+}
