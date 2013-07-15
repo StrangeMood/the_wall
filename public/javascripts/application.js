@@ -13,4 +13,16 @@ function Wall($scope) {
       }
     })
   }
+
+//  var source = new WebSocket('ws://'+document.location.host+'/websockets')
+//  source.onmessage = function(event) {
+//    var message = JSON.parse(event.data)
+//    console.log('SSE: ', message)
+//
+//    $scope.$apply(function() {
+//      if (message.id) {
+//        $scope.wall.push(message)
+//      }
+//    })
+//  }
 }

@@ -18,6 +18,12 @@ object Application extends Controller {
     Ok(views.html.wall(name))
   }
 
+  def websockets = WebSocket.using[JsValue] { request =>
+    val in = Iteratee.ignore[JsValue]
+    val out = Github.events >- Github.stats &> Concurrent.dropInputIfNotReady(50)
+    (in, out)
+  }
+
   def events = Action {
     Ok.stream(Github.events >- Github.stats &> Concurrent.dropInputIfNotReady(50) &> EventSource()).as("text/event-stream")
   }
