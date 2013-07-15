@@ -19,6 +19,6 @@ object Application extends Controller {
   }
 
   def events = Action {
-    Ok.stream(Github.events >- Github.stats &> Concurrent.buffer(50) &> EventSource()).as("text/event-stream")
+    Ok.stream(Github.events >- Github.stats &> Concurrent.dropInputIfNotReady(50) &> EventSource()).as("text/event-stream")
   }
 }
