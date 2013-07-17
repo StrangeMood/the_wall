@@ -9,8 +9,6 @@ import models.Commit
 import play.api.libs.iteratee.{Enumerator, Enumeratee, Concurrent}
 import play.api.data._
 import play.api.data.Forms._
-import io.Source
-import concurrent.ExecutionContext.Implicits.global
 
 object Github extends Controller {
 
@@ -36,15 +34,8 @@ object Github extends Controller {
   }
 
   private val (commits, channel) = Concurrent.broadcast[Commit]
-//  val demoData = Enumerator(Json.parse(Source.fromFile("test/data/github_payload.json").mkString).as[List[Commit]]:_*) &> Json.toJson
 
-  private val commitsStats = Enumeratee.scanLeft[Commit](Map[String, Int]()) { (stats, commit) =>
-    val statsForProject = stats.getOrElse(commit.project, 0)
-    stats.updated(commit.project, statsForProject + 1)
-  }
-
-  val events = commits &> Json.toJson
-  val stats = commits &> commitsStats &> Json.toJson
+  val events = commits
 
   def hook = Action { implicit request =>
     val payload = Json.parse(Form("payload" -> text).bindFromRequest.get)

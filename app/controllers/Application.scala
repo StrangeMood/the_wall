@@ -6,7 +6,7 @@ import play.api.mvc._
 import play.api.libs.json.{JsValue, Json}
 import play.api.libs.EventSource
 import play.api.libs.iteratee.{Iteratee, Enumerator, Concurrent, Enumeratee}
-import models.Commit
+import models.{Stats, HeartBeat, Commit}
 
 object Application extends Controller {
 
@@ -18,13 +18,10 @@ object Application extends Controller {
     Ok(views.html.wall(name))
   }
 
-  def websockets = WebSocket.using[JsValue] { request =>
-    val in = Iteratee.ignore[JsValue]
-    val out = Github.events >- Github.stats &> Concurrent.dropInputIfNotReady(50)
-    (in, out)
-  }
+  val commits = Github.events >- HeartBeat.events
+//  val stats = commits &> Stats.wallShare
 
   def events = Action {
-    Ok.stream(Github.events >- Github.stats &> Concurrent.dropInputIfNotReady(50) &> EventSource()).as("text/event-stream")
+    Ok.stream(commits &> Json.toJson &> EventSource()).as("text/event-stream")
   }
 }

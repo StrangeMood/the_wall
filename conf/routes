@@ -6,7 +6,6 @@
 GET     /                           controllers.Application.index
 GET     /wall/:name                 controllers.Application.wall(name)
 GET     /events                     controllers.Application.events
-GET     /websockets                 controllers.Application.websockets
 
 # Github hook
 POST    /github/hook                controllers.Github.hook
