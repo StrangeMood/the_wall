@@ -4,6 +4,8 @@ import org.joda.time.DateTime
 
 import play.api.libs.json._
 import play.api.libs.functional.syntax._
+import play.api.libs.EventSource.EventNameExtractor
+import play.api.libs.Comet.CometMessage
 
 case class Commit(
   id: String,
@@ -27,4 +29,7 @@ object Commit {
     (__ \ "url").write[String] ~
     (__ \ "project").write[String]
   )(unlift(Commit.unapply))
+
+  implicit val eventNameExtractorForCommit = EventNameExtractor[Commit](c => Some("commit"))
+  implicit val jsonCommits = CometMessage[Commit](Json.toJson(_).toString())
 }

@@ -18,10 +18,9 @@ object Application extends Controller {
     Ok(views.html.wall(name))
   }
 
-  val commits = Github.events >- HeartBeat.events
-//  val stats = commits &> Stats.wallShare
+  val commits = Github.events >- HeartBeat.events &> EventSource[Commit]()
 
   def events = Action {
-    Ok.stream(commits &> Json.toJson &> EventSource()).as("text/event-stream")
+    Ok.stream(commits).as("text/event-stream")
   }
 }
