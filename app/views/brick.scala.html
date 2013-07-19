@@ -1,11 +1,11 @@
 <li class="BrickContainer" ng-repeat="brick in wall">
   <div class="Brick">
-    <div class="Face Front">
+    <div class="Face Front" ng-class='brick.project'>
       <div class="GroupName">{{brick.project}}:</div>
       <div class="Text">{{brick.message}}</div>
       <div class="Status">
         <div class="Author">{{brick.author.name}}</div>
-        <div class="Timestamp" title="{{brick.timestamp}}">{{brick.timestamp}}</div>
+        <div class="Timestamp" title="{{brick.timestamp}}">{{brick.timestamp | moment:'pretty'}}</div>
       </div>
       <div class="Impact"></div>
     </div>
@@ -13,7 +13,7 @@
       <div class="Avatar"></div>
       <div class="Description">{{brick.message}}</div>
       <div class="DescriptionFooter">
-        {{brick.timestamp}}
+        {{brick.timestamp | moment:'pretty'}}
         <br/>
         {{brick.url}}
       </div>

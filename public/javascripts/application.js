@@ -1,3 +1,20 @@
+var app = angular.module('thewall', []);
+
+app.filter('moment', function() {
+    return function(date, type) {
+      if (!date) return
+
+      var date = moment(date)
+      if (date.isValid()) {
+        switch (type) {
+          case 'pretty':
+            return date.fromNow()
+        }
+      }
+    }
+  }
+)
+
 function Wall($scope) {
 
   $scope.wall = []
