@@ -18,8 +18,16 @@ app.filter('moment', function() {
 function Wall($scope) {
 
   $scope.wall = []
+  $scope.stats = {}
 
   var source = new EventSource('/events')
+
+  source.addEventListener('stats', function(e) {
+    var message = JSON.parse(event.data)
+    $scope.$apply(function() {
+      $scope.stats = message
+    })
+  }, false);
 
   source.addEventListener('commit', function(e) {
     var message = JSON.parse(event.data)
